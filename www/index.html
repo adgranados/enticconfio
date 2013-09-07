@@ -35,20 +35,29 @@
         </div>
         <!-- script type="text/javascript" src="phonegap.js"></script -->
         <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>         
         <script type="text/javascript">
             app.initialize();
         </script>
+        <script type="text/javascript" src="/js/plugins/FacebookConnect.js"></script>        
         </br>
-        <h1>PROBANDOOOOOOOO</h1>
+        *****************************************
 
-        Link Externo,</br>
+        <h1>LINK EXTERNO *********************************</h1></br>
         <a href="#" onclick="var ref = window.open('http://google.com', '_system');">Google (System Browser)</a>
         </br></br>
         <a href="#" onclick="var ref = window.open('http://google.com', '_blank');">Google (InAppBrowser)</a>
         </br></br>
         <a href="#" onclick="var ref = window.open('http://google.com', '_self');">Google (Webview)</a></br></br>
 
-
+        <h1>FACEBOOK*********************************</h1></br>
+         <div id="plugindemo">
+                <h3>FacebookConnect Plugin</h3>
+                <a href="#" class="btn large" onclick="plugin.login();">login()</a>
+                <a href="#" class="btn large" onclick="plugin.requestWithGraphPath();">requestWithGraphPath()</a>
+                <a href="#" class="btn large" onclick="plugin.dialog();">dialog()</a>
+                <a href="#" class="btn large" onclick="plugin.logout();">logout()</a>
+            </div>
+            
     </body>
 </html>

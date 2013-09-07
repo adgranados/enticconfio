@@ -69,11 +69,30 @@
     <icon src="res/icon/windows-phone/icon-173.png" gap:platform="winphone"   gap:role="background" />
 
     <!-- Define app splash screen for each platform. -->
-    <gap:splash src="res/screen/android/screen-ldpi-portrait.png"  gap:platform="android" gap:density="ldpi" />
+
+    <!-- gap:splash src="res/screen/android/screen-ldpi-portrait.png"  gap:platform="android" gap:density="ldpi" />
     <gap:splash src="res/screen/android/screen-mdpi-portrait.png"  gap:platform="android" gap:density="mdpi" />
-    <!-- gap:splash src="res/screen/android/screen-mdpi-landscape.png"  gap:platform="android" gap:density="mdpi" / -->
     <gap:splash src="res/screen/android/screen-hdpi-portrait.png"  gap:platform="android" gap:density="hdpi" />
-    <gap:splash src="res/screen/android/screen-xhdpi-portrait.png" gap:platform="android" gap:density="xhdpi" />
+    <gap:splash src="res/screen/android/screen-xhdpi-portrait.png" gap:platform="android" gap:density="xhdpi" / -->
+
+
+
+<!----------------------->
+    <gap:splash src="res/screen/android/screen-ldpi-landscape.png"      width="320"  height="200"  gap:platform="android" />
+    <gap:splash src="res/screen/android/screen-ldpi-portrait.png"       width="200"  height="320"  gap:platform="android" />
+
+    <gap:splash src="res/screen/android/screen-mdpi-landscape.png"      width="480"  height="320"  gap:platform="android" />
+    <gap:splash src="res/screen/android/screen-mdpi-portrait.png"       width="320"  height="480"  gap:platform="android" />
+
+    <gap:splash src="res/screen/android/screen-hdpi-landscape.png"      width="800"  height="480"  gap:platform="android" />
+    <gap:splash src="res/screen/android/screen-hdpi-portrait.png"       width="480"  height="800"  gap:platform="android" />
+    
+    <gap:splash src="res/screen/android/screen-xhdpi-landscape.png"     width="1280" height="720"  gap:platform="android" />
+    <gap:splash src="res/screen/android/screen-xhdpi-portrait.png"      width="720"  height="1280" gap:platform="android" />
+    <!----------------------->
+
+
+
 
     <gap:splash src="res/screen/blackberry/screen-225.png"         gap:platform="blackberry" />
     <gap:splash src="res/screen/ios/screen-iphone-portrait.png"    gap:platform="ios"     width="320" height="480" />

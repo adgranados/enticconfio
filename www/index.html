@@ -36,16 +36,10 @@
         <!-- script type="text/javascript" src="phonegap.js"></script -->
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>         
-        <script type="text/javascript" src="js/plugins/social-ios/social.js"></script>    
-        <script type="text/javascript" src="js/plugins/social-android/social.js"></script>    
         <script type="text/javascript">
             app.initialize();
         </script>        
         <script type="text/javascript">
-            function onDeviceReady(){
-               window.SocialShare = new SocialShare(); 
-            }
-
             !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
 
         </script>
@@ -55,32 +49,26 @@
 
         <h1>LINK EXTERNO *********************************</h1></br>
 
-        <a href="#" onclick="var ref = window.open('http://google.com', '_system');">Google (System Browser)</a>
+        <a href="#" onclick="var ref = window.open('http://www.enticconfio.gov.co/', '_system');">Google (System Browser)</a>
         </br></br>
-        <a href="#" onclick="var ref = window.open('http://google.com', '_blank');">Google (InAppBrowser)</a>
+        <a href="#" onclick="var ref = window.open('http://www.enticconfio.gov.co/', '_blank');">Google (InAppBrowser)</a>
         </br></br>
         <a href="#" onclick="var ref = window.open('http://google.com', '_self');">Google (Webview)</a></br></br>
 
         <h1>COMPARTIR FACEBOOK - ANDROID - IOS</h1>
 
-        <a href="#" onclick="var ref = window.open('https://m.facebook.com/sharer.php?u=http://google.com.co', '_blank');">COMPARTIR FACEBOOK</a>
+        <a href="#" onclick="var ref = window.open('https://m.facebook.com/sharer.php?u=http://www.enticconfio.gov.co/', '_blank');">COMPARTIR FACEBOOK</a>
         </br></br>
 
-        <h1>COMPARTIR FACEBOOK - ANDROID - IOS</h1>
+        <h1>1. COMPARTIR TWITTER - ANDROID - IOS</h1>
 
         <a href="#" onclick="var ref = window.open('https://twitter.com/share', '_blank');" class="twitter-share-button" data-lang="en">COMPARTIR TWITTER</a>
         </br></br>
-
-
-        <h1>FACEBOOK IOS ******************************</h1></br>
-        <a href="#" onclick="window.plugins.social.share('ENTICCONFIO... PROBANDO', 'http://google.com', 'www/image/logo.png');">COMPARTIR IOS</a></br></br>
-
-        <h1>FACEBOOK ANDROID ******************************</h1></br>
-        <a href="#" onclick="window.plugins.ShareSocial.social({message:'ENTICCONFIO .. PROBANDO... http://google.com.co'});">COMPARTIR ANDROID</a></br></br>
     
-        
+        <h1>2. COMPARTIR TWITTER PERSONALIZADO - ANDROID - IOS</h1>
 
-        
+        <a href="#" onclick="var ref = window.open('https://twitter.com/share?url=http://www.enticconfio.gov.co/&screen_name=enticconfio&text=Probando..', '_blank');">COMPARTIR TWITTER ENTICCONFIO</a>
+        </br></br>   
 
 
     </body>

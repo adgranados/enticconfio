@@ -51,8 +51,13 @@
         <script src="js/jquery.mobile-1.3.1.min.js"></script>
 
         <script type="text/javascript">
-            $(function(){   
-            //eventos
+
+            document.addEventListener("deviceready", onDeviceReady, false);
+
+            function onDeviceReady() {
+                // Now safe to use the PhoneGap API
+
+                //eventos
                 var url ="http://www.enticconfio.gov.co/rest/consultarTipsConducta?pkey=fe1132c415f6b7968f54e68c8264d17c10208288&pwd=/5GfdtrsLk&&conducta=eventos";
                     
                 $.get(url, {},function(data) {
@@ -101,10 +106,18 @@
                     });
                                     
                 });
-            }).error(function(){
-                console.log("faill");
-            });
 
+
+            }
+
+
+            /* 
+                $(function(){   
+                
+                }).error(function(){
+                    console.log("faill");
+                });
+            */
                 
         </script>
     </head>

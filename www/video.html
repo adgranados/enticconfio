@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EnTicConfio</title>
+  
+    <link rel="stylesheet" type="text/css" href="css/enticconfio.css">
+      <link rel="stylesheet" type="text/css" href="fonts/stylesheet.css">
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css">
+  <link href="css/MobileBraind-A_B.min.css" rel="stylesheet" type="text/css"/>
+  <script src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
+  <script type="text/javascript">
+  function videoautoheight(){
+	$("object, embed, .format-video").each(function() {
+		var orig = $(this);
+		var ratio = orig.attr("height") / orig.attr("width");
+		
+		
+		
+		var parWidth  = orig.parents().find("body").width()-40;
+		var parHeigth = orig.parents().find("body").height()-$(".ui-header").eq(0).height();
+		
+		if(parWidth > parHeigth){
+			if(parWidth > parHeigth*3){
+				orig
+				.attr("width", parWidth/2)
+				.attr("height", parHeigth);	
+			}
+			else{
+					orig
+				.attr("width", parWidth)
+				.attr("height", parHeigth);
+			}
+			
+		}else{
+			orig
+				.attr("width", Math.min(parWidth,parHeigth))
+				.attr("height", Math.min(parWidth,parHeigth));
+		}
+					
+	});
+}
+
+
+
+
+  	$(function(){
+			var url = sessionStorage.getItem("videoURL");
+			if(url != null){
+				$("#video_container").attr("src",url);
+				videoautoheight();
+				window.addEventListener('resize', videoautoheight, false);
+			}else{
+				parent.history.back();
+			}
+		});
+  </script>  <script src="js/jquery.mobile-1.3.1.min.js"></script>
+  <script type="text/javascript" src="js/en_tic_confio_logic.js"></script>
+  </head>
+<body>
+    <div data-role="page" id="video">
+            <div data-role="header" style="text-align:right;" >
+                <img src="img/logos/LogoETCHorizontal.png" style="width:20%;"/>
+                <a href="#page_ciberacoso" data-rel="back" data-role="button" data-inline="true" data-icon="back" data-iconpos="notext"></a>
+            </div>
+            <div data-role="content" style="width:100%;text-align:center">
+                  <iframe class="format-video" id="video_container" width="100" height="100" src="http://www.youtube.com/embed/V3oJR5IAMxM" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div data-role="footer" >
+            </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EnTicConfio</title>
+  
+    <link rel="stylesheet" type="text/css" href="css/enticconfio.css">
+      <link rel="stylesheet" type="text/css" href="fonts/stylesheet.css">
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css">
+  <link href="css/MobileBraind-A_B.min.css" rel="stylesheet" type="text/css"/>
+  <script src="http://code.jquery.com/jquery-1.10.0.min.js"></script>  
+  <script src="js/jquery.mobile-1.3.1.min.js"></script>
+  
+  	<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js" type="text/javascript"></script>
+  <script src="js/jquery.mobile.validate.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+
+$(function(){
+	
+/*
+ * Translated default messages for the jQuery validation plugin.
+ * Locale: ES
+ */
+jQuery.extend(jQuery.validator.messages, {
+  required: "Este campo es obligatorio.",
+  remote: "Por favor, rellena este campo.",
+  email: "Por favor, escribe una dirección de correo válida",
+  url: "Por favor, escribe una URL válida.",
+  date: "Por favor, escribe una fecha válida.",
+  dateISO: "Por favor, escribe una fecha (ISO) válida.",
+  number: "Por favor, escribe un número entero válido.",
+  digits: "Por favor, escribe sólo dígitos.",
+  creditcard: "Por favor, escribe un número de tarjeta válido.",
+  equalTo: "Por favor, escribe el mismo valor de nuevo.",
+  accept: "Por favor, escribe un valor con una extensión aceptada.",
+  maxlength: jQuery.validator.format("Por favor, no escribas más de {0} caracteres."),
+  minlength: jQuery.validator.format("Por favor, no escribas menos de {0} caracteres."),
+  rangelength: jQuery.validator.format("Por favor, escribe un valor entre {0} y {1} caracteres."),
+  range: jQuery.validator.format("Por favor, escribe un valor entre {0} y {1}."),
+  max: jQuery.validator.format("Por favor, escribe un valor menor o igual a {0}."),
+  min: jQuery.validator.format("Por favor, escribe un valor mayor o igual a {0}.")
+});
+	
+	
+				
+	$("#solicitarConferencia").submit(function(){
+			
+			$("#solicitarConferenciaForm").validate();
+			
+			if ($("#solicitarConferenciaForm").valid()) {
+												
+				var params = new Array();
+				params.push({'name':'pkey','value':'fe1132c415f6b7968f54e68c8264d17c10208288'});
+				params.push({'name':'pwd','value':'/5GfdtrsLk&'});
+		
+				var fields = $("#solicitarConferencia form").serializeArray();
+				params = params.concat(fields);		
+		
+				var url = "http://www.enticconfio.gov.co/rest/solicitarConferencia";
+		
+				$.post(url, params,function(data){
+					navigator.notification.alert(
+						"La Solicitud fue realizada con exito",
+						function(){},
+						"En Tic Confio",
+						"Cerrar"
+					)
+					//navigator.notification.alert("La Solicitud fue realizada con exito");	   
+					 
+				  }, "json");
+				
+				//return false;	
+			}/*else {
+				alert("bad form!");
+			}*/
+			
+		return false;			
+			
+	});
+	
+})
+</script>
+ <style>
+.panel-content { padding:15px; }	
+LABEL.error {
+	width: 98%;
+	padding: 1%;
+	background: #c00;
+	color: #fff;
+	text-align: center;
+	display: block;
+	margin: 1% 0;
+	text-shadow: none;
+}
+
+</style>
+</head>
+<body>
+<div id="solicitarConferencia" data-role="page">
+    <div data-role="header" style="text-align:right;" >
+  <img src="img/logos/LogoETCHorizontal.png"
+                 style="width:50%;"/>
+        <a href="#defaultpanelSolicitarConferencia" data-role="button" data-inline="true" data-icon="bars" data-iconpos="notext"></a>
+  </div>
+    <div data-role="content">
+    <H1 style="background-color:#333;border:2px solid;border-radius:10px;border-color:#F90;margin:2px;padding:2px;color: #E66015;
+font-family: 'HelveticaRoundedLTStdBdRg';
+font-weight: bold;
+font-size: 17px;text-align:center;color:#FC0;font-family:HelveticaNeueRegular;">Completa el formulario y solicita nuestra conferencia</H1><br />
+        <form style="width:100%; text-align:center" id="solicitarConferenciaForm" method="post" action="#">
+        
+            <label> <input type="text" name="username" class="required" maxlength="150" placeholder="Nombre de Usuario" /></label><br />
+            <label><input type="email" name="email" class="required email" maxlength="320" placeholder="Email"/></label><br />
+            <label> <input type="tel" name="telefono" class="required" maxlength="100" placeholder="Teléfono"/></label><br />
+            <label> <input type="text" name="empresa" class="required" maxlength="150" placeholder="Institución o Empresa"/></label><br />
+            <label> <select name="departamento">
+                <option value="AMAZONAS">AMAZONAS</option>
+                <option value="ANTIOQUIA">ANTIOQUIA</option>
+                <option value="ARAUCA">ARAUCA</option>
+                <option value="ARCHIPIÉLAGO DE SAN ANDRÉS, PROVIDENCIA Y SANTA CA">ARCHIPIÉLAGO DE SAN ANDRÉS, PROVIDENCIA Y SANTA CA</option>
+                <option value="ATLÁNTICO">ATLÁNTICO</option>
+                <option value="BOGOTÁ D.C.">BOGOTÁ D.C.</option>
+                <option value="BOLÍVAR">BOLÍVAR</option>
+                <option value="BOYACA">BOYACA</option>
+                <option value="CALDAS">CALDAS</option>
+                <option value="CAQUETÁ">CAQUETÁ</option>
+                <option value="CASANARE">CASANARE</option>
+                <option value="CAUCA">CAUCA</option>
+                <option value="CESAR">CESAR</option>
+                <option value="CHOCÓ">CHOCÓ</option>
+                <option value="CÓRDOBA">CÓRDOBA</option>
+                <option value="CUNDINAMARCA">CUNDINAMARCA</option>
+                <option value="GUAINÍA">GUAINÍA</option>
+                <option value="GUAVIARE">GUAVIARE</option>
+                <option value="HUILA">HUILA</option>
+                <option value="LA GUAJIRA">LA GUAJIRA</option>
+                <option value="MAGDALENA">MAGDALENA</option>
+                <option value="META">META</option>
+                <option value="NARIÑO">NARIÑO</option>
+                <option value="NORTE DE SANTANDER">NORTE DE SANTANDER</option>
+                <option value="PUTUMAYO">PUTUMAYO</option>
+                <option value="QUINDIO">QUINDIO</option>
+                <option value="RISARALDA">RISARALDA</option>
+                <option value="SANTANDER">SANTANDER</option>
+                <option value="SUCRE">SUCRE</option>
+                <option value="TOLIMA">TOLIMA</option>
+                <option value="VALLE DEL CAUCA">VALLE DEL CAUCA</option>
+                <option value="VAUPÉS">VAUPÉS</option>
+                <option value="VICHADA">VICHADA</option>            
+            </select>
+            </label><br>
+            <label><input type="text" name="ciudad" class="required" maxlength="100" placeholder="Ciudad"/></label><br />
+            <label> <input type="text" name="comentarios" class="required" maxlength="500" placeholder="Comentarios"/></label><br>
+            
+          <input type="submit" name="enviar" data-theme="a" value="Solicitar">
+        </form>
+    </div>
+    <div data-role="footer" >
+		<div data-role="navbar">
+            <ul>
+                <li><a href="index.html" data-theme="c">Inicio</a></li>
+                <li><a href="denuncia.html" data-theme="d" rel="external">Denuncia</a></li>
+            </ul>
+		</div><!-- /navbar -->
+		
+        <div class="ui-grid-a" style="text-align:center;margin-top:10px;">
+            <div class="ui-block-a"><img src="img/logos/LogoMinticSVGv2.png" width="70%" /> </div>
+            <div class="ui-block-b"><img src="img/logos/LVD.png" width="70%" style="text-align:right;"/></div>	   
+      </div>
+    </div>
+    
+    <!-- defaultpanel  -->
+    <div data-role="panel" id="defaultpanelSolicitarConferencia" data-theme="b">
+    <!-- div class="panel-content" -->
+        <ul data-role="listview" data-theme="d">
+            <li data-icon="home" ><a href="index.html">Inicio</a></li>
+            <li><a href="pornografiaInfantil.html">Pornografía Infantil</a></li>
+            <li><a href="grooming.html">Grooming</a></li>
+            <li><a href="sexting.html">Sexting</a></li>
+            <li><a href="ciberacoso.html">Ciberacoso</a></li>
+            <li><a href="fraudeElectronico.html">Fraude Electrónico</a></li>
+            <li><a href="ciberDependencia.html">Ciber Dependencia</a></li>                                                
+            <li data-theme="c" data-icon="info"><a href="acercade.html" rel="external">Acerca de</a></li>  
+            <li data-icon="delete"><a href="#demo-links" data-rel="close" data-theme="c" data-icon="delete" data-inline="true">Cerrar Panel</a></li>
+        </ul>
+        
+      <!-- /div --><!-- /content wrapper for padding -->
+ 
+    </div><!-- /defaultpanel -->
+
+</div>

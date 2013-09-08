@@ -106,42 +106,78 @@
         </script>
     </head>
     <body>
-        <!-- div class="app">
-            <h1>Enticconfio</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
+        
+        <div data-role="page" id="page1">
+            <div data-role="header" style="text-align:right;">
+                <img src="img/logos/LogoETCHorizontal.png"
+                 style="width:50%;"/>
+                <a href="#defaultpanel" data-role="button" data-inline="true" data-icon="bars" data-iconpos="notext"></a>
             </div>
-        </div -->
-        <!-- script type="text/javascript" src="phonegap.js"></script -->
+
+            <div data-role="content">
+          
+              <!-- a href="#popupVideo" data-rel="popup" data-position-to="window" data-role="button" aria-haspopup="true" aria-owns="#popupVideo">  <img src="img/ciberacosoedited-1.jpg" /></a>
+               
+               <div data-role="popup" id="popupVideo" data-overlay-theme="a" data-theme="d" data-tolerance="15,15" class="ui-content">
+
+                <iframe src="http:\/\/www.youtube.com\/v\/Y75A-F39bYQ" width="100%" height="298" seamless></iframe>
+                 
+                </div -->
+              
+                <div id="carruselHome">
+                    <br />
+                    <ul class="bxslider" style="width: auto; position: relative;padding-left: 0px;margin-top: 0px;margin-bottom: 0px;">
+                    </ul>
+
+                </div>
+
+                <hr />
+                <ul data-role="listview" id="conductas">
+                    <li data-theme="a"><a href="pornografiaInfantil.html"  rel="external" >Pornografía Infantil</a></li>
+                    <li data-theme="a"><a href="grooming.html" rel="external" >Grooming</a></li>
+                    <li data-theme="a"><a href="sexting.html" rel="external">Sexting</a></li>
+                    <li data-theme="b"><a href="ciberacoso.html" rel="external">Ciberacoso</a></li>
+                    <li data-theme="b"><a href="fraudeElectronico.html" rel="external">Fraude Electrónico</a></li>
+                    <li data-theme="b"><a href="ciberDependencia.html" rel="external">Ciber Dependencia</a></li>
+                </ul>
+
+            </div>
+
+
+            <div data-role="footer">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="solicitarConferencia.html" data-theme="c" rel="external">Conferencia</a></li>
+                        <li><a href="denuncia.html" data-theme="d" rel="external">Denuncia</a></li>
+                    </ul>
+                </div><!-- /navbar -->
         
-        
-        </br>
-        
+                <div class="ui-grid-a" style="text-align:center;margin-top:10px;">
+                    <div class="ui-block-a"><img src="img/logos/LogoMinticSVGv2.png" width="70%" /> </div>
+                    <div class="ui-block-b"><img src="img/logos/LVD.png" width="70%" style="text-align:right;"/></div>     
+                </div>
 
-        <h1>LINK EXTERNO *********************************</h1></br>
-
-        <a href="#" onclick="var ref = window.open('http://www.enticconfio.gov.co/', '_system');">Google (System Browser)</a>
-        </br></br>
-        <a href="#" onclick="var ref = window.open('http://www.enticconfio.gov.co/', '_blank');">Google (InAppBrowser)</a>
-        </br></br>
-        <a href="#" onclick="var ref = window.open('http://google.com', '_self');">Google (Webview)</a></br></br>
-
-        <h1>COMPARTIR FACEBOOK - ANDROID - IOS</h1>
-
-        <a href="#" onclick="var ref = window.open('https://m.facebook.com/sharer.php?u=http://www.enticconfio.gov.co/', '_blank');">COMPARTIR FACEBOOK</a>
-        </br></br>
-
-        <h1>1. COMPARTIR TWITTER - ANDROID - IOS</h1>
-
-        <a href="#" onclick="var ref = window.open('https://twitter.com/share', '_blank');" class="twitter-share-button" data-lang="en">COMPARTIR TWITTER</a>
-        </br></br>
+            </div> 
     
-        <h1>2. COMPARTIR TWITTER PERSONALIZADO - ANDROID - IOS</h1>
+            <!-- defaultpanel  -->
+            <div data-role="panel" id="defaultpanel" data-theme="b">
+ 
+                <!-- div class="panel-content" -->
+                <ul data-role="listview" data-theme="d">
+                    <!--li data-icon="home" ><a href="index.html">Inicio</a></li-->
+                    <li><a href="pornografiaInfantil.html" rel="external">Pornografía Infantil</a></li>
+                    <li><a href="grooming.html" rel="external">Grooming</a></li>
+                    <li><a href="sexting.html" rel="external">Sexting</a></li>
+                    <li><a href="ciberacoso.html" rel="external">Ciberacoso</a></li>
+                    <li><a href="fraudeElectronico.html" rel="external">Fraude Electrónico</a></li>
+                    <li><a href="ciberDependencia.html" rel="external">Ciber Dependencia</a></li>                                                
+                    <li data-theme="c" data-icon="info"><a href="acercade.html" rel="external">Acerca de</a></li>  
+                    <li data-icon="delete"><a href="#demo-links" data-rel="close" data-theme="c" data-icon="delete" data-inline="true">Cerrar Panel</a></li>
+                </ul> 
 
-        <a href="#" onclick="var ref = window.open('https://twitter.com/share?url=http://www.enticconfio.gov.co/&screen_name=enticconfio&text=Probando..', '_blank');">COMPARTIR TWITTER ENTICCONFIO</a>
-        </br></br>   
+            </div><!-- /defaultpanel -->
 
+        </div>      
 
     </body>
 </html>

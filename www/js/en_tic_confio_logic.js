@@ -36,13 +36,12 @@ twitterGo = function(url,title){
 	sessionStorage.setItem("compartirurl",url);
 
 	if(title == null || title == 'null'){
-		title="Nooooooooo"
+		title=" "
 	}
 
 	if(url != null){
 		//window.open("https://twitter.com/share?url='"+url+"'&screen_name=enticconfio&text="+title, '_blank');
-		window.open('https://twitter.com/share?url='+url, '_blank');
-		//window.open('https://twitter.com/share?url='+url+'&screen_name=enticconfio&text='+title, '_blank');
+		window.open('https://twitter.com/share?url='+url+'&screen_name=enticconfio&text='+title, '_blank');
 		//window.open('https://twitter.com/share?url=http://www.enticconfio.gov.co/&screen_name=enticconfio&text=Probando..', '_blank');
 	}
 }
@@ -69,7 +68,7 @@ twitterGo = function(url,title){
 	articulo.append("<h3>"+title+"</h3>");	
 	 var vermasLinks = "";
 			if(vermas!=null && vermas != "" && vermas.match(/null/g)==null){
-				vermasLinks = '<div data-role="navbar"><ul><li><a href="#" onclick="vermas(\''+vermas+'\')" data-role="button" data-theme="b">ver mas</a></li><li>'+'<a href="#" onclick="facebookGo(\''+vermas+'\')" rel="external"  data-role="button" data-theme="b">Compartir en Facebook!!</a></li><li><a href="#" onclick="twitterGo(\''+vermas+','+title+'\')" rel="external"  data-role="button" data-theme="b">Compartir en Twitter!!</a></li></ul></div>';
+				vermasLinks = '<div data-role="navbar"><ul><li><a href="#" onclick="vermas(\''+vermas+'\')" data-role="button" data-theme="b">ver mas</a></li><li>'+'<a href="#" onclick="facebookGo(\''+vermas+'\')" rel="external"  data-role="button" data-theme="b">Compartir en Facebook!!</a></li><li><a href="#" onclick="twitterGo(\''+vermas+'\',\''+title+'\')" rel="external"  data-role="button" data-theme="b">Compartir en Twitter!!</a></li></ul></div>';
 				//href="https://www.facebook.com/sharer/sharer.php?u='+vermas+'" target="_blank"
 				//'+vermas+'\'
 				

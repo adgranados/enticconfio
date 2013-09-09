@@ -17,13 +17,32 @@ showVideo= function(videoCode){
 
 vermas = function(url){
 	sessionStorage.setItem("vermasurl",url);
-	window.location.href = "vermas.html";
+	//window.location.href = "vermas.html";
+	if(url != null){
+		window.open(url, '_blank');
+	}
+
 }
 
 facebookGo = function(url){
 	sessionStorage.setItem("compartirurl",url);
-	window.location.href = "facebook.html";
+	
+	if(url != null){
+		window.open('https://m.facebook.com/sharer.php?u='+url, '_blank');
+	}
 }
+
+twitterGo = function(url,title){
+	sessionStorage.setItem("compartirurl",url);
+
+	if(title == null)
+		title=""
+
+	if(url != null){
+		window.open('https://twitter.com/share?url='+url+'&screen_name=enticconfio&text='+title, '_blank');
+	}
+}
+
  generateItem = function(itemd,collapsible){
 	  
 	
@@ -47,7 +66,7 @@ facebookGo = function(url){
 	articulo.append("<h3>"+title+"</h3>");	
 	 var vermasLinks = "";
 			if(vermas!=null && vermas != "" && vermas.match(/null/g)==null){
-				vermasLinks = '<div data-role="navbar"><ul><li><a href="#" onclick="vermas(\''+vermas+'\')" data-role="button" data-theme="b">ver mas</a></li><li>'+'<a href="#" onclick="facebookGo(\''+vermas+'\')" rel="external"  data-role="button" data-theme="b">Compartir en Facebook!!</a></li></ul></div>';
+				vermasLinks = '<div data-role="navbar"><ul><li><a href="#" onclick="vermas(\''+vermas+'\')" data-role="button" data-theme="b">ver mas</a></li><li>'+'<a href="#" onclick="facebookGo(\''+vermas+'\')" rel="external"  data-role="button" data-theme="b">Compartir en Facebook!!</a></li><li><a href="#" onclick="twitterGo(\''+vermas+','+title+'\')" rel="external"  data-role="button" data-theme="b">Compartir en Twitter!!</a></li></ul></div>';
 								//href="https://www.facebook.com/sharer/sharer.php?u='+vermas+'" target="_blank"
 								//'+vermas+'\'
 				

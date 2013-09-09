@@ -68,10 +68,14 @@ jQuery.extend(jQuery.validator.messages, {
 		
 				var url = "http://www.enticconfio.gov.co/rest/solicitarConferencia";
 		
+
+        function hola(){
+
+        }
 				$.post(url, params,function(data){
 					navigator.notification.alert(
 						"La Solicitud fue realizada con exito",
-						function(){},
+						hola(),
 						"En Tic Confio",
 						"Cerrar"
 					)

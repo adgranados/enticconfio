@@ -35,13 +35,13 @@ facebookGo = function(url){
 twitterGo = function(url,title){
 	sessionStorage.setItem("compartirurl",url);
 
-	if(title == null || title == 'null'){
+	/*if(title == null || title == 'null'){
 		title=" "
-	}
+	}*/
 
 	if(url != null){
-		//window.open('https://twitter.com/share?url='+url+'&screen_name=enticconfio&text='+title, '_blank');
-		window.open('https://twitter.com/share?url=http://www.enticconfio.gov.co/&screen_name=enticconfio&text=Probando..', '_blank');
+		window.open('https://twitter.com/share?url='+url+'&screen_name=enticconfio, '_blank');
+		//window.open('https://twitter.com/share?url=http://www.enticconfio.gov.co/&screen_name=enticconfio&text=Probando..', '_blank');
 	}
 }
 

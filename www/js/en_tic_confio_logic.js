@@ -40,7 +40,8 @@ twitterGo = function(url,title){
 	}*/
 
 	if(url != null){
-		window.open('https://twitter.com/share?url='+url+'&screen_name=enticconfio', '_blank');
+		urlShare = 'https://twitter.com/share?url='+url+'&screen_name=enticconfio'
+		window.open(urlShare, '_blank');
 		//window.open('https://twitter.com/share?url=http://www.enticconfio.gov.co/&screen_name=enticconfio&text=Probando..', '_blank');
 	}
 }

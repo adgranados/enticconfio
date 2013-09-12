@@ -107,6 +107,10 @@ LABEL.error {
 	margin: 1% 0;
 	text-shadow: none;
 }
+#solicitarConferenciaForm input, select{
+  font-family:HelveticaNeueRegular;
+}
+
 
 </style>
 </head>
@@ -124,7 +128,7 @@ font-weight: bold;
 font-size: 17px;text-align:center;color:#FC0;font-family:HelveticaNeueRegular;">Completa el formulario y solicita nuestra conferencia</H1><br />
         <form style="width:100%; text-align:center" id="solicitarConferenciaForm" method="post" action="#">
         
-            <label> <input type="text" name="username" class="required" maxlength="150" placeholder="Nombre de Usuario" /></label><br />
+            <label> <input type="text" name="username" class="required" maxlength="150" placeholder="Nombre de Usuario"  /></label><br />
             <label><input type="email" name="email" class="required email" maxlength="320" placeholder="Email"/></label><br />
             <label> <input type="tel" name="telefono" class="required" maxlength="100" placeholder="Teléfono"/></label><br />
             <label> <input type="text" name="empresa" class="required" maxlength="150" placeholder="Institución o Empresa"/></label><br />

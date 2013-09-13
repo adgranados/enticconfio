@@ -117,4 +117,10 @@
     </plugins -->
 
 
+
+<activity>
+    android:configChanges="keyboardHidden"
+    android:screenOrientation="portrait"
+</activity>
+
 </widget>

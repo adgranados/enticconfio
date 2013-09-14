@@ -50,6 +50,7 @@
         <link href="css/jquery.bxslider.css" rel="stylesheet" />  
 
         <script src="js/jquery.mobile-1.3.1.min.js"></script>
+        <script type="text/javascript" src="js/en_tic_confio_logic.js"></script>
 
         <script type="text/javascript">
 
@@ -77,6 +78,8 @@
                         var url         = itemd["url"]; 
                         var vermas      = itemd["urlmas"];
                         var texto       = itemd["text"];
+                        title = "<a href='#' data-role='button' data-theme='c' onclick='eventosGo("+index+")'>" + title + "</a>"
+                    
                         var li = [];
                         if(url != null  && url != "" && url.match(/null/g)==null)
                             switch (typeItem){
@@ -86,7 +89,7 @@
                                     regResponse = pattern.exec(url)
                                     if(regResponse != null){
                                         videoCode = regResponse[1];
-                                    
+
                                         li = $('<li style="background:no-repeat cover;background-image:url(http://img.youtube.com/vi/'+videoCode+'/0.jpg);-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover; background-size: cover;"><img src="img/enTicConfio_play1.png" width="100%" title="'+(title!=null?title:"")+'" /></li>');
                                     
                                         $('.bxslider').append(li);
@@ -107,6 +110,8 @@
                         
                     });
                     
+
+
                     $('.bxslider').bxSlider({
                         adaptiveHeight: true,
                         mode: 'fade',
@@ -182,6 +187,7 @@
                 <!-- div class="panel-content" -->
                 <ul data-role="listview" data-theme="d">
                     <!--li data-icon="home" ><a href="index.html">Inicio</a></li-->
+                    <li><a href="eventos.html" rel="external">EVENTOS</a></li>
                     <li><a href="pornografiaInfantil.html" rel="external">Pornografía Infantil</a></li>
                     <li><a href="grooming.html" rel="external">Grooming</a></li>
                     <li><a href="sexting.html" rel="external">Sexting</a></li>

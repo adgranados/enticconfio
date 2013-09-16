@@ -97,9 +97,12 @@ eventosGo = function(itemIndex){
 				texto += '<br /><hr style="border:2px dashed #F90" />';
 				
 			var video = "";
-			if(videoCode != null)
-				video = '<a href="" onclick="showVideo(\''+videoCode+'\')"  data-position-to="window" data-role="button" ><img src="http://img.youtube.com/vi/'+videoCode+'/0.jpg" width="100%" /></a>';
-			else
+			if(videoCode != null){
+				//video = '<a href="" onclick="showVideo(\''+videoCode+'\')"  data-position-to="window" data-role="button" ><img src="http://img.youtube.com/vi/'+videoCode+'/0.jpg" width="100%" /></a>';
+				video = '<iframe class="format-video" id="video_container" width="100%" height="100%" src="'+url+'" frameborder="0" allowfullscreen></iframe>'
+				videoautoheight();
+				window.addEventListener('resize', videoautoheight, false);
+			}else
 				video = 'No llego la data del video';
 				
 			parrafo = $('<p style="text-align:justify;">'+texto+'<br />'+video+vermasLinks+'</p>');
@@ -139,6 +142,37 @@ eventosGo = function(itemIndex){
 	$(collapsible).append(articulo);
 	$(collapsible).trigger('create');
   }
+
+function videoautoheight(){
+	$(".format-video").each(function() {
+		var orig = $(this);
+		var ratio = orig.attr("height") / orig.attr("width");
+		
+		
+		
+		var parWidth  = orig.parents().find("body").width()-80;
+		var parHeigth = orig.parents().find("body").height()-$(".ui-header").eq(0).height();
+		
+		if(parWidth > parHeigth){
+			if(parWidth > parHeigth*3){
+				orig
+				.attr("width", parWidth/2)
+				.attr("height", parHeigth);	
+			}
+			else{
+					orig
+				.attr("width", parWidth)
+				.attr("height", parHeigth);
+			}
+			
+		}else{
+			orig
+				.attr("width", Math.min(parWidth,parHeigth))
+				.attr("height", Math.min(parWidth,parHeigth));
+		}
+					
+	});
+}
   
   itemFail = function(collapsibleSetId){
 	  		var articulo = $('<div data-role="collapsible" style="background-color:rgba(255,204,0,.5);"></div>');	

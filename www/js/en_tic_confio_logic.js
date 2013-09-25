@@ -77,7 +77,8 @@ eventosGo = function(itemIndex){
 	 var vermasLinks = "";
 			if(vermas!=null && vermas != "" && vermas.match(/null/g)==null){
 				//vermasLinks = '<div data-role="navbar"><ul><li><a href="#" onclick="vermas(\''+vermas+'\')" data-role="button" data-theme="b">ver mas</a></li><li>'+'<a href="#" onclick="facebookGo(\''+vermas+'\')" rel="external"  data-role="button" data-theme="b">Compartir en Facebook!!</a></li><li><a href="#" onclick="twitterGo(\''+vermas+'\',\''+title+'\')" rel="external"  data-role="button" data-theme="b">Compartir en Twitter!!</a></li></ul></div>';
-				vermasLinks = '<div data-role="navbar"><ul><li>'+'<a href="#" onclick="facebookGo(\''+vermas+'\')" rel="external"  data-role="button" data-theme="b">Compartir en Facebook!!</a></li><li><a href="#" onclick="twitterGo(\''+vermas+'\',\''+title+'\')" rel="external"  data-role="button" data-theme="b">Compartir en Twitter!!</a></li></ul></div>';
+				//vermasLinks = '<div data-role="navbar"><ul><li>'+'<a href="#" onclick="facebookGo(\''+vermas+'\')" rel="external"  data-role="button" data-theme="b">Compartir en Facebook!!</a></li><li><a href="#" onclick="twitterGo(\''+vermas+'\',\''+title+'\')" rel="external"  data-role="button" data-theme="b">Compartir en Twitter!!</a></li></ul></div>';
+				vermasLinks = '<div data-role="navbar"><ul><li>'+'<a href="#" onclick="facebook.html" rel="external"  data-role="button" data-theme="b">Compartir en Facebook!!</a></li><li><a href="#" onclick="twitterGo(\''+vermas+'\',\''+title+'\')" rel="external"  data-role="button" data-theme="b">Compartir en Twitter!!</a></li></ul></div>';
 
 				//href="https://www.facebook.com/sharer/sharer.php?u='+vermas+'" target="_blank"
 				//'+vermas+'\'

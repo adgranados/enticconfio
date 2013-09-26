@@ -87,7 +87,8 @@ eventosGo = function(itemIndex){
 
 
 
-				vermasLinks = vermasLinks + '<div style="overflow:hidden;"><img src="img/linea-punteada.png" style="width:100%;"/></div><div style="text-align:right;"><a href="#" onclick="facebookGo(\''+vermas+'\')" rel="external" data-theme="b"><img src="img/Facebook32x32.png" /></a><a href="#" onclick="twitterGo(\''+vermas+'\',\''+title+'\')" rel="external" data-theme="b"><img src="img/Twitter32x32.png" /></a></div>';
+				vermasLinks = '<div style="overflow:hidden;"><img src="img/linea-punteada.png" style="width:100%;"/></div>';
+				vermasLinks = vermasLinks + '<div style="text-align:right;"><a href="#" onclick="facebookGo(\''+vermas+'\')" rel="external" data-theme="b"><img src="img/Facebook32x32.png" /></a><a href="#" onclick="twitterGo(\''+vermas+'\',\''+title+'\')" rel="external" data-theme="b"><img src="img/Twitter32x32.png" /></a></div>';
 				
 
 

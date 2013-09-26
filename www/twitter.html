@@ -19,16 +19,14 @@
     <link href="css/MobileBraind-A_B.min.css" rel="stylesheet" type="text/css"/>
     <script src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
     <script type="text/javascript">
-    	$(function(){
-  				//href="https://www.facebook.com/sharer/sharer.php?u='+vermas+'" target="_blank"
+    	$(function(){  				
   				var url = sessionStorage.getItem("compartirurl");
   				if(url != null){
-    				$('#continuar').click(function(){
-              //facebookGo(url)
-              window.open('https://m.facebook.com/sharer.php?u='+url, '_blank');
-    				 /*var shareUrl = 'https://m.facebook.com/sharer.php?u='+url
+    				$('#continuar').click(function(){              
+              urlShare = 'http://www.enticconfio.gov.co/'
+              titleShare = 'Probando..'            
 
-    				   window.location = shareUrl; */
+              window.open('https://twitter.com/share?url='+urlShare+'&screen_name=enticconfio&text='+titleShare, '_blank');
     			  });
           }
   			  else{
@@ -59,8 +57,8 @@
               padding: 15px; 
               border-radius:10px; box-shadow:10px 10px 5px #999; background-color:rgba(255,204,0,.5); text-align:center"><br />
               <span style="font-family:HelveticaNeueRegular;text-align:center">
-                En este momento iras a compartir nuestro contenido en Facebook! 
-                <img src="img/facebook.png" width="90%" />
+                En este momento iras a compartir nuestro contenido en Twitter! 
+                <img src="img/twitter_bird.png" width="40%" />
               </span>
         </p>
        

@@ -26,7 +26,7 @@
 
         <title>EnTicConfio</title>
 
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <!--link rel="stylesheet" type="text/css" href="css/index.css" /-->
         
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>         
@@ -79,7 +79,7 @@
                         var url         = itemd["url"]; 
                         var vermas      = itemd["urlmas"];
                         var texto       = itemd["text"];
-                        title = "<a href='#' data-role='button' data-theme='c' style='overflow:hidden;' onclick='eventosGo("+index+")'>"+title+"<img src="" /></a>"
+                        title = "<a href='#' class='bannerNoLink' data-role='button' data-theme='c' style='overflow:hidden;' onclick='eventosGo("+index+")'>"+title+"<img src='img/go-next.png' align='right' /></a>"
                     
                         var li = [];
                         if(url != null  && url != "" && url.match(/null/g)==null)
@@ -116,15 +116,15 @@
                     $('.bxslider').bxSlider({
                         adaptiveHeight: true,
                         mode: 'fade',
-                        captions: true,
-                         onSliderLoad: function(){
+                        captions: true
+                        /*onSliderLoad: function(){
                             // do funky JS stuff here
                             alert('Slider has finished loading. Click OK to continue!');
-                          },
-                          onSlideAfter: function(){
+                        },
+                        onSlideAfter: function(){
                             // do mind-blowing JS stuff here
                             alert('A slide has finished transitioning. Bravo. Click OK to continue!');
-                          }
+                        }*/
                     });
                                     
                 });

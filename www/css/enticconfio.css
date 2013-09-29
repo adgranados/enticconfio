@@ -12,3 +12,7 @@ div#container {
 	-webkit-overflow-scrolling: touch;
 }
 		
+.bannerNoLink{
+	text-decoration: none;
+	color:white;
+}

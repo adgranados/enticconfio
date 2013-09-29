@@ -75,11 +75,11 @@
                         //generateItem(itemd,"#newsCiberdependencia");
                         //console.log(itemd);
                         var typeItem    = itemd["type"];
-                        var title       = itemd["title"];
+                        var title       = itemd["title"].substring(0,100);
                         var url         = itemd["url"]; 
                         var vermas      = itemd["urlmas"];
                         var texto       = itemd["text"];
-                        title = "<a href='#' data-role='button' data-theme='c' onclick='eventosGo("+index+")'></a>"
+                        title = "<a href='#' data-role='button' data-theme='c' style='overflow:hidden;' onclick='eventosGo("+index+")'>"+title+"<img src="" /></a>"
                     
                         var li = [];
                         if(url != null  && url != "" && url.match(/null/g)==null)
@@ -99,11 +99,11 @@
                                             
                                 break;
                                 case "imageText":
-                                    li = $('<li><img src="'+url+'" width="100%" title="'+title.substring(0,100)+'..."/></li>')
+                                    li = $('<li><img src="'+url+'" width="100%" title="'+title+'"/></li>')
                                     $('.bxslider').append(li);
                                     break;
                                 case "image":
-                                    li = $('<li><img src="'+url+'" width="100%" title="'+title.substring(0,100)+'..."/></li>')
+                                    li = $('<li><img src="'+url+'" width="100%" title="'+title+'"/></li>')
                                     $('.bxslider').append(li);
                                     break;
                             }

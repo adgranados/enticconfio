@@ -21,7 +21,8 @@
     <link href="css/MobileBraind-A_B.min.css" rel="stylesheet" type="text/css"/>
     
 
-<script src="js/jquery-1.10.0.min.js"></script>
+    <script src="js/jquery-1.10.0.min.js"></script>
+    <script type='text/javascript' src='js/jquery.urlshortener.js'></script>
     <script type="text/javascript">
     	$(function(){  				
   				var url = sessionStorage.getItem("compartirurl");
@@ -30,13 +31,20 @@
     				$('#continuar').click(function(){              
               //urlShare = 'http://www.enticconfio.gov.co/'
               //urlShare = url
-              alert(url);
+              //alert(url);
               urlShare = url.replace(/\s/g,"+")
-              alert(urlShare);
+              //alert(urlShare);
               //titleShare = 'Probando.. Probando.. Probando.. Probando.. Probando.. Probando.. '            
               titleShare = compartirtitle.replace(/\s/g,"+")
 
-              window.open('https://twitter.com/share?url='+urlShare+'&screen_name=enticconfio&text='+titleShare, '_blank');
+              $.shortenUrl.settings.login = 'lucerovivas';
+              $.shortenUrl.settings.apiKey = 'R_0a0addcbacd168955736558c10834fd1';
+
+              $.shortenUrl(urlShare, function(short_url) {
+                // do whatever you want with the shortened url here                
+                window.open('https://twitter.com/share?url='+short_url+'&screen_name=enticconfio&text='+titleShare, '_blank');
+              });
+              
               //window.open('https://twitter.com/share?url='+urlShare+'&screen_name=enticconfio&text='+titleShare, '_system');
     			  });
           }

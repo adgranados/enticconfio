@@ -25,6 +25,33 @@
     <script type='text/javascript' src='js/jquery.urlshortener.js'></script>
     <script type="text/javascript">
     	$(function(){  				
+
+
+        var normalize = (function() {
+                var from = "ÃÀÁÄÂÈÉËÊÌÍÏÎÒÓÖÔÙÚÜÛãàáäâèéëêìíïîòóöôùúüûÑñÇç",
+                    to   = "AAAAAEEEEIIIIOOOOUUUUaaaaaeeeeiiiioooouuuunncc",
+                    mapping = {};
+               
+                for(var i = 0, j = from.length; i < j; i++ )
+                    mapping[ from.charAt( i ) ] = to.charAt( i );
+               
+                return function( str ) {
+                    var ret = [];
+                    for( var i = 0, j = str.length; i < j; i++ ) {
+                        var c = str.charAt( i );
+                        if( mapping.hasOwnProperty( str.charAt( i ) ) )
+                            ret.push( mapping[ c ] );
+                        else
+                            ret.push( c );
+                    }
+                    return ret.join( '' );
+                }
+               
+              })();
+
+
+
+
   				var url = sessionStorage.getItem("compartirurl");
           var compartirtitle = sessionStorage.getItem("compartirtitle");
   				if(url != null){
@@ -35,7 +62,17 @@
               urlShare = url.replace(/\s/g,"+")
               //alert(urlShare);
               //titleShare = 'Probando.. Probando.. Probando.. Probando.. Probando.. Probando.. '            
-              titleShare = compartirtitle.replace(/\s/g,"+")
+              titleShare = compartirtitle
+              /*.replace(/\s/g,"+")
+              .replace(/á/i,"a")
+              .replace(/é/i,"e")
+              .replace(/í/i,"i")
+              .replace(/ó/i,"o")
+              .replace(/ú/i,"u")*/
+
+              
+
+              titleShare = normalize(titleShare)
 
               $.shortenUrl.settings.login = 'lucerovivas';
               $.shortenUrl.settings.apiKey = 'R_0a0addcbacd168955736558c10834fd1';

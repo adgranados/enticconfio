@@ -119,7 +119,14 @@ eventosGo = function(itemIndex){
 				
 			var video = "";
 			if(videoCode != null){
-				video = '<a href="" onclick="showVideo(\''+videoCode+'\')"  data-position-to="window" data-role="button" ><img src="http://img.youtube.com/vi/'+videoCode+'/0.jpg" width="100%" /></a>';
+				//video = '<a href="" onclick="showVideo(\''+videoCode+'\')"  data-position-to="window" data-role="button" >'
+				//video = video + '<img src="http://img.youtube.com/vi/'+videoCode+'/0.jpg" width="100%" /></a>';
+
+				video = "<div style='width: 100%; left: 0px; top: 0px; display: block; background-image:url(img/banner-video-evento.png); background-size: 100% 100%; background-repeat: no-repeat;'>"
+				video = video + "<a href='' onclick=\"showVideo('"+videoCode+"')\">"
+				video = video + "<img src='http://img.youtube.com/vi/"+videoCode+"/0.jpg' style='width:99%; border-radius:10px;opacity: 0.1' ></a></div>"
+
+
 				//video = '<iframe class="format-video" id="video_container" width="100%" height="100%" src="'+url+'" frameborder="0" allowfullscreen></iframe>'
 				//videoautoheight();
 				//window.addEventListener('resize', videoautoheight, false);

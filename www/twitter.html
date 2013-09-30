@@ -25,10 +25,11 @@
     <script type="text/javascript">
     	$(function(){  				
   				var url = sessionStorage.getItem("compartirurl");
+          var compartirtitle = sessionStorage.getItem("compartirtitle");
   				if(url != null){
     				$('#continuar').click(function(){              
               urlShare = 'http://www.enticconfio.gov.co/'
-              titleShare = 'Probando..'            
+              titleShare = '' + compartirtitle  + ''
 
               window.open('https://twitter.com/share?url='+urlShare+'&screen_name=enticconfio&text='+titleShare, '_blank');
     			  });

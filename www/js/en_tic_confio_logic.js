@@ -35,6 +35,7 @@ facebookGo = function(url){
 
 twitterGo = function(url,title){
 	sessionStorage.setItem("compartirurl",url);
+	sessionStorage.setItem("compartirtitle",title);
 
 	/*if(title == null || title == 'null'){
 		title=" "

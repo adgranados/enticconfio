@@ -28,9 +28,12 @@
           var compartirtitle = sessionStorage.getItem("compartirtitle");
   				if(url != null){
     				$('#continuar').click(function(){              
-              urlShare = 'http://www.enticconfio.gov.co/'
-              titleShare = 'Probando.. Probando.. Probando.. Probando.. Probando.. Probando.. '            
+              //urlShare = 'http://www.enticconfio.gov.co/'
+              urlShare = url.replace(/\s/g,"%20")
+              //titleShare = 'Probando.. Probando.. Probando.. Probando.. Probando.. Probando.. '            
+              titleShare = compartirtitle.replace(/\s/g,"%20")
 
+                  
               window.open('https://twitter.com/share?url='+urlShare+'&screen_name=enticconfio&text='+titleShare, '_blank');
     			  });
           }

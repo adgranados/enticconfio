@@ -54,7 +54,6 @@ twitterGo = function(url,title){
 eventosGo = function(itemIndex){
 	sessionStorage.setItem("EventoIndex",itemIndex);
 	window.location = "eventos.html";
-
 }
 
  generateItem = function(itemd,collapsible){

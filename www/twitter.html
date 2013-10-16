@@ -71,21 +71,22 @@
               .replace(/ú/i,"u")*/
 
               
-              alert(titleShare);
+              //alert(titleShare);
               titleShare = normalize(titleShare);
-              alert(titleShare);
+              //alert(titleShare);
 
               $.shortenUrl.settings.login = 'lucerovivas';
               $.shortenUrl.settings.apiKey = 'R_0a0addcbacd168955736558c10834fd1';
 
-              alert(urlShare);
+              //alert(urlShare);
               urlShare = normalize(urlShare);
-              alert(urlShare);
+              //alert(urlShare);
 
               $.shortenUrl(urlShare, function(short_url) {
                 // do whatever you want with the shortened url here                
-                window.open('https://twitter.com/share?url='+short_url+'&screen_name=enticconfio&text='+titleShare, '_blank');
+                window.open('https://twitter.com/share?url='+short_url+'&screen_name=enticconfio&text='+titleShare, '_system');
               });
+              //_blank
               
               //window.open('https://twitter.com/share?url='+urlShare+'&screen_name=enticconfio&text='+titleShare, '_system');
     			  });

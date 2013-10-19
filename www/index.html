@@ -127,7 +127,15 @@
                             alert('A slide has finished transitioning. Bravo. Click OK to continue!');
                         }*/
                     });
-                                    
+
+
+                    $('.bxsliderprueba').bxSlider({
+                      nextSelector: '#slider-next',
+                      prevSelector: '#slider-prev',
+                      nextText: 'Onward →',
+                      prevText: '← Go back'
+                    });
+
                 });
             
             }).error(function(){
@@ -158,12 +166,31 @@
 
 
 
+
                 <div id="carruselHome">
+
+                    <ul class="bxsliderprueba">
+                      <li><img src="img/prueba/1.jpg" /></li>
+                      <li><img src="img/prueba/2.jpg" /></li>
+                      <li><img src="img/prueba/3.jpg" /></li>
+                      <li><img src="img/prueba/4.jpg" /></li>
+                    </ul>
+
+                    <div class="outside">
+                      <h3>This div is outside of the slider</h3>
+                      <p><span id="slider-prev"></span> | <span id="slider-next"></span></p>
+                    </div>
+
+
                     <br />
                     <ul class="bxslider" style="width: auto; position: relative;padding-left: 0px;margin-top: 0px;margin-bottom: 0px;">
                     </ul>
 
                 </div>
+
+                <br/><br/>
+
+
 
 
                 <!-- div id="netowrk">

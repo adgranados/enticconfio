@@ -54,15 +54,14 @@ $(function(){
     max: jQuery.validator.format("Por favor, escribe un valor menor o igual a {0}."),
     min: jQuery.validator.format("Por favor, escribe un valor mayor o igual a {0}.")
   });
-	
-
-  $("#failConnection").hide();
 
   var url ="http://www.enticconfio.gov.co/rest/consultarTipsConducta?pkey=fe1132c415f6b7968f54e68c8264d17c10208288&pwd=/5GfdtrsLk&&conducta=pornografiainfantil";
     
   $.get(url, {},function(data) {
     $.each(data,function(index,itemd){
-      //N/A
+      $("#failConnection").hide();
+      $("form").show()  
+      //N/A 
     });
   }).error(function(){
     $("form").hide()

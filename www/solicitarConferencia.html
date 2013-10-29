@@ -60,11 +60,11 @@ $(function(){
   $.get(url, {},function(data) {
     $.each(data,function(index,itemd){
       $("#failConnection").hide();
-      $("form").show()  
+      $("#form").show()  
       //N/A 
     });
   }).error(function(){
-    $("form").hide()
+    $("#form").hide()
     $("#failConnection").show();
   });
 

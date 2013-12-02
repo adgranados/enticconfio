@@ -24,122 +24,92 @@
 <script src="js/jquery-1.10.0.min.js"></script>  
   <script src="js/jquery.mobile-1.3.1.min.js"></script>
   
-  	<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js" type="text/javascript"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js" type="text/javascript"></script>
   <script src="js/jquery.mobile.validate.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 
 $(function(){
-	
-  /*
-   * Translated default messages for the jQuery validation plugin.
-   * Locale: ES
-   */
-  jQuery.extend(jQuery.validator.messages, {
-    required: "Este campo es obligatorio.",
-    remote: "Por favor, rellena este campo.",
-    email: "Por favor, escribe una dirección de correo válida",
-    url: "Por favor, escribe una URL válida.",
-    date: "Por favor, escribe una fecha válida.",
-    dateISO: "Por favor, escribe una fecha (ISO) válida.",
-    number: "Por favor, escribe un número entero válido.",
-    digits: "Por favor, escribe sólo dígitos.",
-    creditcard: "Por favor, escribe un número de tarjeta válido.",
-    equalTo: "Por favor, escribe el mismo valor de nuevo.",
-    accept: "Por favor, escribe un valor con una extensión aceptada.",
-    maxlength: jQuery.validator.format("Por favor, no escribas más de {0} caracteres."),
-    minlength: jQuery.validator.format("Por favor, no escribas menos de {0} caracteres."),
-    rangelength: jQuery.validator.format("Por favor, escribe un valor entre {0} y {1} caracteres."),
-    range: jQuery.validator.format("Por favor, escribe un valor entre {0} y {1}."),
-    max: jQuery.validator.format("Por favor, escribe un valor menor o igual a {0}."),
-    min: jQuery.validator.format("Por favor, escribe un valor mayor o igual a {0}.")
-  });
-
-  var url ="http://www.enticconfio.gov.co/rest/consultarTipsConducta?pkey=fe1132c415f6b7968f54e68c8264d17c10208288&pwd=/5GfdtrsLk&&conducta=pornografiainfantil";
+  
+/*
+ * Translated default messages for the jQuery validation plugin.
+ * Locale: ES
+ */
+jQuery.extend(jQuery.validator.messages, {
+  required: "Este campo es obligatorio.",
+  remote: "Por favor, rellena este campo.",
+  email: "Por favor, escribe una dirección de correo válida",
+  url: "Por favor, escribe una URL válida.",
+  date: "Por favor, escribe una fecha válida.",
+  dateISO: "Por favor, escribe una fecha (ISO) válida.",
+  number: "Por favor, escribe un número entero válido.",
+  digits: "Por favor, escribe sólo dígitos.",
+  creditcard: "Por favor, escribe un número de tarjeta válido.",
+  equalTo: "Por favor, escribe el mismo valor de nuevo.",
+  accept: "Por favor, escribe un valor con una extensión aceptada.",
+  maxlength: jQuery.validator.format("Por favor, no escribas más de {0} caracteres."),
+  minlength: jQuery.validator.format("Por favor, no escribas menos de {0} caracteres."),
+  rangelength: jQuery.validator.format("Por favor, escribe un valor entre {0} y {1} caracteres."),
+  range: jQuery.validator.format("Por favor, escribe un valor entre {0} y {1}."),
+  max: jQuery.validator.format("Por favor, escribe un valor menor o igual a {0}."),
+  min: jQuery.validator.format("Por favor, escribe un valor mayor o igual a {0}.")
+});
+  
+  
+        
+  $("#solicitarConferenciaForm").submit(function(){
+      
+      $("#solicitarConferenciaForm").validate();
+      
+      if ($("#solicitarConferenciaForm").valid()) {
+                        
+        var params = new Array();
+        params.push({'name':'pkey','value':'fe1132c415f6b7968f54e68c8264d17c10208288'});
+        params.push({'name':'pwd','value':'/5GfdtrsLk&'});
     
-  $.get(url, {},function(data) {
-    $.each(data,function(index,itemd){
-      $("#failConnection").hide();
-      $("#form").show()  
-      //N/A 
-    });
-  }).error(function(){
-    $("#form").hide()
-    $("#failConnection").show();
-  });
+        var fields = $("#solicitarConferencia form").serializeArray();
+        params = params.concat(fields);   
+    
+        var url = "http://www.enticconfio.gov.co/rest/solicitarConferencia";
+    
 
+        function hola(){
 
-				
-	$("#solicitarConferenciaForm").submit(function(){
-			
-			$("#solicitarConferenciaForm").validate();
-			
-			if ($("#solicitarConferenciaForm").valid()) {
-
-
-        var url ="http://www.enticconfio.gov.co/rest/consultarTipsConducta?pkey=fe1132c415f6b7968f54e68c8264d17c10208288&pwd=/5GfdtrsLk&&conducta=pornografiainfantil";
-        $.get(url, {},function(xx) {
-         
-          var params = new Array();
-          params.push({'name':'pkey','value':'fe1132c415f6b7968f54e68c8264d17c10208288'});
-          params.push({'name':'pwd','value':'/5GfdtrsLk&'});
-      
-          var fields = $("#solicitarConferencia form").serializeArray();
-          params = params.concat(fields);   
-      
-          var url = "http://www.enticconfio.gov.co/rest/solicitarConferencia";
-      
-
-          function hola(){
-
-          }
-
-          $.post(url, params,function(data){
-            navigator.notification.alert(
-              "La Solicitud fue realizada con exito",
-              hola(),
-              "En Tic Confio",
-              "Cerrar"
-            )
-            $("#solicitarConferencia form input").val("");
-            //navigator.notification.alert("La Solicitud fue realizada con exito");    
-             
-            }, "json");
-          
-          //return false; 
-
-        }).error(function(){
+        }
+        $.post(url, params,function(data){
           navigator.notification.alert(
-              "Verifica si estas conectado a internet",
-              hola(),
-              "En Tic Confio",
-              "Cerrar"
+            "La Solicitud fue realizada con exito",
+            hola(),
+            "En Tic Confio",
+            "Cerrar"
           )
-          $("form").hide()
-          $("#failConnection").show();
-        });
-
-			}/*else {
-				alert("bad form!");
-			}*/
-			
-		return false;			
-			
-	});
-	
+          $("#solicitarConferencia form input").val("");
+          //navigator.notification.alert("La Solicitud fue realizada con exito");    
+           
+          }, "json");
+        
+        //return false; 
+      }/*else {
+        alert("bad form!");
+      }*/
+      
+    return false;     
+      
+  });
+  
 })
 </script>
  <style>
-.panel-content { padding:15px; }	
+.panel-content { padding:15px; }  
 LABEL.error {
-	width: 98%;
-	padding: 1%;
-	background: #c00;
-	color: #fff;
-	text-align: center;
-	display: block;
-	margin: 1% 0;
-	text-shadow: none;
+  width: 98%;
+  padding: 1%;
+  background: #c00;
+  color: #fff;
+  text-align: center;
+  display: block;
+  margin: 1% 0;
+  text-shadow: none;
 }
 #solicitarConferenciaForm input, select{
   font-family:HelveticaNeueRegular;
@@ -151,11 +121,11 @@ LABEL.error {
 <body>
 <div id="solicitarConferencia" data-role="page">
     <div data-role="header" style="text-align:right;" >
-      <img src="img/logos/LogoETCHorizontal.png"
+  <img src="img/logos/LogoETCHorizontal.png"
                  style="width:50%;"/>
         <a href="#defaultpanelSolicitarConferencia" data-role="button" data-inline="true" data-icon="bars" data-iconpos="notext"></a>
-    </div>
-    <div data-role="content" id="form">
+  </div>
+    <div data-role="content">
     <H1 style="background-color:#333;border:2px solid;border-radius:10px;border-color:#F90;margin:2px;padding:2px;color: #E66015;
 font-family: 'HelveticaRoundedLTStdBdRg';
 font-weight: bold;
@@ -207,29 +177,18 @@ font-size: 17px;text-align:center;color:#FC0;font-family:HelveticaNeueRegular;">
             
           <input type="submit" name="enviar" data-theme="a" value="Solicitar">
         </form>
-
-
-        <div data-role="collapsible-set" id="failConnection" data-theme="a">
-                    
-        </div>
-        <p style="font-family:HelveticaNeueRegular;text-align:justify;border:4px dashed #F90;padding: 15px;border-radius:10px; box-shadow:10px 10px 5px #999; background-color:rgba(255,204,0,.5); text-align:center" id="failConnection"><br />
-            <span style="font-family:HelveticaNeueRegular;text-align:center">
-              Verifica si estas conectado a internet!              
-            </span>
-        </p>
-
     </div>
     <div data-role="footer" >
-		<div data-role="navbar">
+    <div data-role="navbar">
             <ul>
                 <li><a href="index.html" data-theme="c" rel="external">Inicio</a></li>
                 <li><a href="denuncia.html" data-theme="d" rel="external">Denuncia</a></li>
             </ul>
-		</div><!-- /navbar -->
-		
+    </div><!-- /navbar -->
+    
         <div class="ui-grid-a" style="text-align:center;margin-top:10px;">
             <div class="ui-block-a"><img src="img/logos/LogoMinticSVGv2.png" width="70%" /> </div>
-            <div class="ui-block-b"><img src="img/logos/Logo_Vive_digital.png" width="70%" style="text-align:right;"/></div>	   
+            <div class="ui-block-b"><img src="img/logos/Logo_Vive_digital.png" width="70%" style="text-align:right;"/></div>     
       </div>
     </div>
     
